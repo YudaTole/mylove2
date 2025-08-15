@@ -82,9 +82,9 @@
 
 <script>
 /* ===================== KONFIGURASI ===================== */
-const MUSIC_URL = "https://files.catbox.moe/apz92p.aac"; // ganti ke URL mp3 kamu
+const MUSIC_URL = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; // ganti ke URL mp3 kamu
 const IMAGES = [
-  "https://files.catbox.moe/73yhl4.jpeg",
+  "https://images.unsplash.com/photo-1517487881594-2787fef5ebf7?q=80&w=1600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1496302662116-35cc4f36df92?q=80&w=1600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1504198453319-5ce911bafcde?q=80&w=1600&auto=format&fit=crop",
   "https://images.unsplash.com/photo-1495385794356-15371f348c31?q=80&w=1600&auto=format&fit=crop",
@@ -149,13 +149,13 @@ function setSlide(i){
   const scale = onA ? KEN_BURNS_MAX : KEN_BURNS_MIN;
 
   if(onA){
-    layerB.style.backgroundImage = url('${url}');
-    layerB.style.transform = scale(${scale});
+    layerB.style.backgroundImage = `url('${url}')`;
+    layerB.style.transform = `scale(${scale})`;
     layerA.classList.add('dim');
     layerB.classList.remove('dim');
   }else{
-    layerA.style.backgroundImage = url('${url}');
-    layerA.style.transform = scale(${scale});
+    layerA.style.backgroundImage = `url('${url}')`;
+    layerA.style.transform = `scale(${scale})`;
     layerB.classList.add('dim');
     layerA.classList.remove('dim');
   }
@@ -247,7 +247,7 @@ function tick(){
     const glow = (Math.sin(p.a)*0.5+0.5)*0.9+0.1;
     gCtx.beginPath();
     gCtx.arc(p.x,p.y,p.r,0,Math.PI*2);
-    gCtx.fillStyle = rgba(255,255,255,${glow});
+    gCtx.fillStyle = `rgba(255,255,255,${glow})`;
     gCtx.fill();
   });
   requestAnimationFrame(tick);
@@ -255,8 +255,8 @@ function tick(){
 
 /* ===== Bootstrap first frame ===== */
 (function boot(){
-  layerA.style.backgroundImage = url('${IMAGES[0]}');
-  layerA.style.transform = scale(${KEN_BURNS_MIN});
+  layerA.style.backgroundImage = `url('${IMAGES[0]}')`;
+  layerA.style.transform = `scale(${KEN_BURNS_MIN})`;
   quoteText.textContent = ''; quoteBy.textContent = '';
 })();
 </script>
